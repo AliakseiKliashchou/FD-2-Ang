@@ -14,13 +14,15 @@ import { Fd2FooterComponent } from './components/footer/footer.component';
 import { SignInComponent } from './components/sign-in/sign-in.component';
 import { RoutingModule } from './app.routing';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { SignUpComponent } from './components/sign-up/sign-up.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     Fd2HeaderComponent,
     Fd2FooterComponent,
-    SignInComponent    
+    SignInComponent,
+    SignUpComponent
   ],
   imports: [
     RoutingModule,

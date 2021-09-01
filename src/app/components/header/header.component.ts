@@ -19,7 +19,7 @@ export class Fd2HeaderComponent implements OnInit {
   public ngOnInit(): void {
     // this.appService.myObservable
     //   .subscribe( () => console.log('HEADER!!!'));
-    this.appService.mySubject.subscribe( value => console.log('FROM HEADER: ', value));
+    // this.appService.mySubject.subscribe( value => console.log('FROM HEADER: ', value));
   }
 
   public goToSignIn(): void {

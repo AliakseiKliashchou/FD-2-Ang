@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ labels.sign_up }}</title>
+</head>
+  <body>
+      <fd2-header></fd2-header>
+      <h1>{{ labels.sign_up }}</h1>
+      <div [formGroup]="signUpForm" *ngIf="signUpForm" class="sign-up">
+        <mat-form-field appearance="outline">
+          <mat-label>{{ labels.firstName }}</mat-label>
+          <input matInput placeholder="{{ labels.firstName }}" formControlName="firstName">
+          <mat-error *ngIf="signUpForm.get('firstName')?.hasError('required')">{{ errors.required }}</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>{{ labels.lastName }}</mat-label>
+          <input matInput placeholder="{{ labels.lastName }}" formControlName="lastName">
+          <mat-error *ngIf="signUpForm.get('lastName')?.hasError('required')">{{ errors.required }}</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>{{ labels.email }}</mat-label>
+          <input matInput  placeholder="{{ labels.email }}" formControlName="email">
+          <mat-error *ngIf="signUpForm.get('email')?.hasError('required')">{{ errors.required }}</mat-error>
+          <mat-error *ngIf="signUpForm.get('email')?.hasError('pattern')">{{ errors.email_template }}</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>{{ labels.password }}</mat-label>
+          <input type="password" matInput  placeholder="{{ labels.password }}" formControlName="password1">
+          <mat-error *ngIf="signUpForm.get('password1')?.hasError('required')">{{ errors.required }}</mat-error>
+          <mat-error *ngIf="signUpForm.get('password1')?.hasError('pattern')">{{ errors.password_length }}</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>{{ labels.password }}</mat-label>
+          <input type="password" matInput  placeholder="{{ labels.password }}" formControlName="password2">
+          <mat-error *ngIf="signUpForm.get('password2')?.hasError('required')">{{ errors.required }}</mat-error>
+          <mat-error *ngIf="signUpForm.get('password2')?.hasError('pattern')">{{ errors.password_length }}</mat-error>
+          <mat-error *ngIf="signUpForm.get('password2')?.hasError('passwords_equal')">{{ errors.passwords_equal }}</mat-error>
+        </mat-form-field>
+      </div>
+
+  </body>
+</html>

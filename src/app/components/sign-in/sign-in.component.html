@@ -4,20 +4,26 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>{{ labels.sign_in }}</title>
 </head>
   <body>
       <fd2-header></fd2-header>
-      <h1>Sign In</h1>
-      <div [formGroup]="signInForm">
+      <h1>{{ labels.sign_in }}</h1>
+      <div [formGroup]="signInForm" class="sign-in">
         <mat-form-field appearance="outline">
-          <mat-label>Check</mat-label>
-          <input matInput  placeholder="Just a placeholder" formControlName="email">
+          <mat-label>{{ labels.email }}</mat-label>
+          <input matInput  placeholder="{{ labels.email }}" formControlName="email">
+          <mat-error *ngIf="signInForm.get('email').hasError('required')">{{ errors.required }}</mat-error>
+          <mat-error *ngIf="signInForm.get('email').hasError('pattern')">{{ errors.email_template }}</mat-error>
         </mat-form-field>
         <mat-form-field appearance="outline">
-          <mat-label>Check</mat-label>
-          <input matInput  placeholder="Just a placeholder" formControlName="password">
+          <mat-label>{{ labels.password }}</mat-label>
+          <input type="password" matInput  placeholder="{{ labels.password }}" formControlName="password">
+          <mat-error *ngIf="signInForm.get('password').hasError('required')">{{ errors.required }}</mat-error>
+          <mat-error *ngIf="signInForm.get('password').hasError('pattern')">{{ errors.password_length }}</mat-error>
         </mat-form-field>
+        <button [disabled]="!isFormValid" mat-raised-button color="primary">{{ labels.sign_in }}</button>
+        <button class="sign-in__signUpBtn" routerLink="/sign-up" mat-raised-button color="primary">{{ labels.goToSignUp }}</button>
       </div>
   </body>
 </html>
