@@ -39,7 +39,7 @@
           <mat-error *ngIf="signUpForm.get('password2')?.hasError('pattern')">{{ errors.password_length }}</mat-error>
           <mat-error *ngIf="signUpForm.get('password2')?.hasError('passwords_equal')">{{ errors.passwords_equal }}</mat-error>
         </mat-form-field>
+        <button [disabled]="signUpForm.invalid" class="sign-up__submitBtn" routerLink="/" mat-raised-button color="primary">{{ labels.sign_up }}</button>
       </div>
-
   </body>
 </html>

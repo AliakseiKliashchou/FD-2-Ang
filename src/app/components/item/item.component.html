@@ -1,0 +1,32 @@
+<div class="item">
+  <div class="item__photo">
+    <img src="../../../assets/images/no-image.png" alt="">
+  </div>
+  <div class="item__content">
+    <div class="item__content-info">
+      <span>Name:</span>
+      <span>{{ item.name }}</span>
+    </div>
+    <div class="item__content-info">
+      <span>Sizes: </span>
+      <span *ngFor="let size of item.sizes">{{ size }} </span>
+    </div>
+    <div class="item__content-info">
+      <span>Colors: </span>
+      <span *ngFor="let color of item.colors">{{ color }} </span>
+    </div>
+    <div class="item__content-info">
+      <span>Country:</span>
+      <span>{{ item.country }}</span>
+    </div>
+    <div class="item__content-info">
+      <span>Available: </span>
+      <span>{{ item.isWarehouse ? 'Yes' : 'No' }}</span>
+    </div>
+    <div class="item__content-info">
+      <span>Price: </span>
+      <span>{{ item.price | currency }}</span>
+    </div>
+    <counter></counter>
+  </div>
+</div>

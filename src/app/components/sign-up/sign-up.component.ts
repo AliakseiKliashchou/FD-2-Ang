@@ -14,9 +14,6 @@ export class SignUpComponent {
   public signUpForm!: FormGroup;
   public labels = LABELS;
   public errors = ERROR_MESSAGES;
-  public isFormValid: boolean = false; //remove
-
-
 
   constructor(
     private formBuilder: FormBuilder
@@ -40,16 +37,11 @@ export class SignUpComponent {
   private initSubscriptions(): void {
     this.signUpForm.valueChanges
       .subscribe( () => {
-        this.isFormValid = this.signUpForm.valid;
         const password1 = this.signUpForm.value.password1;
         const password2 = this.signUpForm.value.password2;
-
-        // this.signUpForm.
-        // this.signUpForm.controls['password2'].setErrors({'passwords_equal': true});
-
-        // this.signUpForm.
-        // this.signUpForm.
+        password1 !== password2 ? this.signUpForm.controls['password2'].setErrors({'passwords_equal': true}) : null;
       });
+
   }
 
 }

@@ -22,7 +22,7 @@
           <mat-error *ngIf="signInForm.get('password').hasError('required')">{{ errors.required }}</mat-error>
           <mat-error *ngIf="signInForm.get('password').hasError('pattern')">{{ errors.password_length }}</mat-error>
         </mat-form-field>
-        <button [disabled]="!isFormValid" mat-raised-button color="primary">{{ labels.sign_in }}</button>
+        <button [disabled]="signInForm.invalid" mat-raised-button color="primary">{{ labels.sign_in }}</button>
         <button class="sign-in__signUpBtn" routerLink="/sign-up" mat-raised-button color="primary">{{ labels.goToSignUp }}</button>
       </div>
   </body>

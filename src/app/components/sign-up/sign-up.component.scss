@@ -7,4 +7,9 @@ h1 {
   flex-direction: column;
   width: 80%;
   margin: 0 auto;
+
+  &__submitBtn {
+    width: 50%;
+    margin: 0 auto;
+  }
 }
