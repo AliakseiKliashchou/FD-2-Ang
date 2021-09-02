@@ -8,6 +8,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { MatBadgeModule } from '@angular/material/badge';
 
 import { AppComponent } from './app.component';
 import { Fd2HeaderComponent } from './components/header/header.component';
@@ -19,6 +20,7 @@ import { MainComponent } from './components/main/main.component';
 import { ItemComponent } from './components/item/item.component';
 import { ItemsComponent } from './components/items/items.component';
 import { CounterComponent } from './shared/components/counter/counter.component';
+import { CartComponent } from './components/cart/cart.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,8 @@ import { CounterComponent } from './shared/components/counter/counter.component'
     MainComponent,
     ItemComponent,
     ItemsComponent,
-    CounterComponent
+    CounterComponent,
+    CartComponent
   ],
   imports: [
     RoutingModule,

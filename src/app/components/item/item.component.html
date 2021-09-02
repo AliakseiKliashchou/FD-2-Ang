@@ -27,6 +27,12 @@
       <span>Price: </span>
       <span>{{ item.price | currency }}</span>
     </div>
-    <counter></counter>
+    <div class="item__content-counter">
+      <counter [value]="counter" (changeCounterValue)="changeCounterValue($event)"></counter>
+    </div>
+    <button mat-raised-button color='primary'>
+      <mat-icon>add_shopping_cart</mat-icon>
+      Add to Cart
+    </button>
   </div>
 </div>

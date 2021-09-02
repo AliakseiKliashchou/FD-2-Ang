@@ -10,7 +10,17 @@ export class ItemComponent implements OnInit {
 
   @Input() item!: Item;
 
+  public counter: number = 0;
+
   public ngOnInit(): void {
+  }
+
+  public changeCounterValue(flag: boolean): void {
+    if (flag) {
+      this.counter++;
+    } else if (this.counter !== 0) {
+      this.counter--;
+    }
   }
 
 }

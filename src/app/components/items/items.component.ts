@@ -12,7 +12,7 @@ export class ItemsComponent {
   public items: Item[] = ITEMS; //Mock data from API
 
   public itemClick(idx: Item): void {
-    console.log('Check', idx);
+    // console.log('Check', idx);
 
   }
 

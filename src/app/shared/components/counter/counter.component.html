@@ -1,9 +1,15 @@
 <div class="counter">
   <div>
-    <button></button>
+    <button mat-raised-button color="primary" (click)="changeValue(false)">
+      <mat-icon>remove_circle_outline</mat-icon>
+    </button>
   </div>
-  <div>5</div>
+  <div class="counter__value">
+    <span>{{ value }}</span>
+  </div>
   <div>
-    <button></button>
+    <button mat-raised-button color="primary" (click)="changeValue(true)">
+      <mat-icon>add_circle_outline</mat-icon>
+    </button>
   </div>
 </div>
