@@ -8,7 +8,8 @@ export const ITEMS: Item[] = [
     colors: ['red', 'black', 'white'],
     price: 300,
     country: 'Germany',
-    isWarehouse: true
+    isWarehouse: true,
+    count: 0
   },
   {
     id: 'afbv5651df351sf51s3d5',
@@ -18,7 +19,8 @@ export const ITEMS: Item[] = [
     price: 350,
     country: 'China',
     isWarehouse: false,
-    discount: 20
+    discount: 20,
+    count: 0
   },
   {
     id: 'v5sdd55v5sdv155sdv51',
@@ -27,7 +29,8 @@ export const ITEMS: Item[] = [
     colors: ['red', 'green'],
     price: 700,
     country: 'Belarus',
-    isWarehouse: false
+    isWarehouse: false,
+    count: 0
   },
   {
     id: 'av35dv1513svd35vsd351',
@@ -36,6 +39,7 @@ export const ITEMS: Item[] = [
     colors: ['red', 'black', 'white'],
     price: 300,
     country: 'Germany',
-    isWarehouse: true
+    isWarehouse: true,
+    count: 0
   },
 ];

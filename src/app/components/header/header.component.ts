@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AppService } from 'src/app/app-service.service';
+import { CartService } from '../cart/cart.service';
 
 @Component({
   selector: 'fd2-header',
@@ -10,16 +11,20 @@ import { AppService } from 'src/app/app-service.service';
 export class Fd2HeaderComponent implements OnInit {
 
   public title: string = 'Posts Application';
+  public itemsCount: number = 0;
 
   constructor(
     private router: Router,
-    private appService: AppService
+    private cartService: CartService
   ) {}
 
   public ngOnInit(): void {
-    // this.appService.myObservable
-    //   .subscribe( () => console.log('HEADER!!!'));
-    // this.appService.mySubject.subscribe( value => console.log('FROM HEADER: ', value));
+    this.getCartItemsCount();
+  }
+
+  private getCartItemsCount(): void {
+    this.cartService.cartItemsCount
+      .subscribe( value => this.itemsCount = value);
   }
 
   public goToSignIn(): void {

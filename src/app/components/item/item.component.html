@@ -30,7 +30,7 @@
     <div class="item__content-counter">
       <counter [value]="counter" (changeCounterValue)="changeCounterValue($event)"></counter>
     </div>
-    <button mat-raised-button color='primary'>
+    <button mat-raised-button color='primary' [disabled]="!counter" (click)="addToCart()">
       <mat-icon>add_shopping_cart</mat-icon>
       Add to Cart
     </button>

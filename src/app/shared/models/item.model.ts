@@ -6,5 +6,6 @@ export interface Item {
   price: number | string;
   country: string;
   isWarehouse: boolean;
+  count: number;
   discount?: number | string;
 }
