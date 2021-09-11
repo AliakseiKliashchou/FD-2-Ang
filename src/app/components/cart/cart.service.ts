@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Subject } from 'rxjs';
 import { Item } from 'src/app/shared/models/item.model';
 import { SharedDataService } from 'src/app/shared/services/shared-data.service';
 
@@ -10,6 +10,7 @@ export class CartService {
 
   public items: Item[] = [];
   public cartItemsCount = new BehaviorSubject(0);
+  public catItems = new BehaviorSubject(this.sharedDataService.cartItems);
 
   constructor(
     private sharedDataService: SharedDataService
